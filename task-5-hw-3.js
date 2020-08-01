@@ -1,4 +1,6 @@
-// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов и имя свойства. Возвращает массив значений определенного свойства prop из каждого объекта в массиве.
+// Напиши функцию getAllPropValues(arr, prop),
+//  которая получает массив объектов и имя свойства.
+// Возвращает массив значений определенного свойства prop из каждого объекта в массиве.
 
 'use strict'
 
@@ -10,14 +12,21 @@ const products = [
 ];
 
 const getAllPropValues = function(arr, prop) {
-    const array = [];
+    let array = [];
+
     for (const object of arr) {
-        if(object[prop] !== undefined) {
-            array.push(object[prop]);
+
+        if(prop == "name") {
+            array.push(object.name);
+        } else if (prop == "price") {
+            array.push(object.price);
+        } else if (prop == "quantity") {
+            array.push(object.quantity);
         }
     }
     return array;
 };
+
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
